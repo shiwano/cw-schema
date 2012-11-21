@@ -1,0 +1,160 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "id": "http://schema.cardwirth.org/utils#",
+  "type": "object",
+  "properties": {
+    "eventTarget": {
+      "id": "#eventTarget",
+      "description": "現在選択中のメンバ, ランダムメンバ, 現在選択中以外のメンバ, 現在選択中のメンバ・睡眠有効, ランダムメンバ・睡眠有効, パーティ全員・睡眠有効, パーティ全員（効果コンテント用）",
+      "required": true,
+      "enum": [
+        "selected",
+        "random",
+        "unselected",
+        "selectedIgnoreSleep",
+        "randomIgnoreSleep",
+        "partyIgnoreSleep",
+        "party"
+      ]
+    },
+    "eventTargetScope": {
+      "id": "#eventTargetScope",
+      "description": "現在選択中のメンバ, ランダムメンバ, パーティ全員, 荷物袋, 全体・荷物袋含む, フィールド全体",
+      "required": true,
+      "enum": [
+        "selected",
+        "random",
+        "party",
+        "inventory",
+        "partyAndInventory",
+        "all"
+      ]
+    },
+    "cardArrangement": {
+      "id": "#cardArrangement",
+      "description": "自動配置, 指定配置",
+      "required": true,
+      "enum": [
+        "auto",
+        "custom"
+      ]
+    },
+    "characterState": {
+      "id": "#characterState",
+      "description": "行動可能, 行動不可, 生存, 非生存, 健康, 負傷, 重症, 意識不明, 毒, 睡眠, 呪縛, 麻痺・石化",
+      "required": true,
+      "enum": [
+        "active",
+        "inactive",
+        "alive",
+        "dead",
+        "fine",
+        "injured",
+        "heavyInjured",
+        "unconscious",
+        "poison",
+        "sleep",
+        "bind",
+        "paralyzed"
+      ]
+    },
+    "phenomenonType": {
+      "id": "#phenomenonType",
+      "description": "物理, 魔法, 魔法的物理, 物理的魔法, 無",
+      "required": true,
+      "enum": [
+        "physical",
+        "magical",
+        "magicalPhysical",
+        "physicalMagical",
+        "non"
+      ]
+    },
+    "reactionType": {
+      "id": "#reactionType",
+      "description": "物理属性, 抵抗属性, 必中属性",
+      "required": true,
+      "enum": [
+        "evasion",
+        "resistance",
+        "ineluctability"
+      ]
+    },
+    "animationType": {
+      "id": "#animationType",
+      "description": "無し, 反転, 横振動, 縦振動",
+      "required": true,
+      "enum": [
+        "none",
+        "turnover",
+        "lateralVibration",
+        "longitudinalVibration"
+      ]
+    },
+    "physicalAptitude": {
+      "id": "#physicalAptitude",
+      "description": "器用, 素早さ, 知力, 筋力, 生命, 精神",
+      "required": true,
+      "enum": [
+        "dex",
+        "agl",
+        "int",
+        "str",
+        "vit",
+        "min"
+      ]
+    },
+    "mentalAptitude": {
+      "id": "#mentalAptitude",
+      "description": "好戦, 平和, 社交, 内向, 勇敢, 臆病, 慎重, 大胆, 狡猾, 正直",
+      "required": true,
+      "enum": [
+        "aggressiveness",
+        "gentleness",
+        "cheerfulness",
+        "depressiveness",
+        "braveness",
+        "timidness",
+        "carefulness",
+        "boldness",
+        "craftiness",
+        "truthfulness"
+      ]
+    },
+    "cardTarget": {
+      "id": "#cardTarget",
+      "description": "対象なし, 使用者, 味方, 敵, 敵・味方両方",
+      "required": true,
+      "enum": [
+        "none",
+        "user",
+        "party",
+        "enemies",
+        "partyAndEnemies"
+      ]
+    },
+    "rarity": {
+      "id": "#rarity",
+      "description": "通常, レア, プレミア",
+      "required": true,
+      "enum": [
+        "common",
+        "rare",
+        "premium"
+      ]
+    },
+    "mentality": {
+      "id": "#mentality",
+      "description": "正常, 恐慌, 勇敢, 激昂, 混乱, 睡眠",
+      "required": true,
+      "enum": [
+        "normal",
+        "panic",
+        "brave",
+        "overheat",
+        "confusion",
+        "sleep"
+      ]
+    }
+  }
+}

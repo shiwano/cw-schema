@@ -1,0 +1,263 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "id": "http://schema.cardwirth.org/event_element#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "type": {
+      "required": true,
+      "enum": [
+        "start",
+        "startLink",
+        "battle",
+        "scenarioEnd",
+        "gameOver",
+        "scene",
+        "message",
+        "music",
+        "background",
+        "sound",
+        "wait",
+        "effect",
+        "branchByMemberSelect",
+        "branchByAbility",
+        "branchByRandom",
+        "branchByFlag",
+        "flag",
+        "branchBySteps",
+        "steps",
+        "branchByFriend",
+        "branchByItem",
+        "branchBySkill",
+        "branchByInformation",
+        "branchByBeast",
+        "branchByMoney",
+        "branchByAchievement",
+        "friend",
+        "item",
+        "skill",
+        "information",
+        "beast",
+        "money",
+        "achievement",
+        "friendLoss",
+        "itemLoss",
+        "skillLoss",
+        "informationLoss",
+        "beastLoss",
+        "moneyLoss",
+        "achievementLoss",
+        "characterMessage",
+        "stepUp",
+        "stepDown",
+        "flagReverse",
+        "branchByCurrentStep",
+        "timePassage",
+        "branchByLevel",
+        "branchByCharacterState",
+        "branchByPartyNumber",
+        "partyShow",
+        "partyHide",
+        "effectBreak",
+        "startCall",
+        "packageLink",
+        "packageCall",
+        "branchByScene",
+        "branchByBattle",
+        "branchByCompletedStamp",
+        "completedStamp",
+        "completedStampLoss",
+        "branchByGossip",
+        "gossip",
+        "gossipLoss",
+        "branchByBattleNow",
+        "backgroundRebuild",
+        "flagCheck"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "children": {
+      "id": "#eventElements",
+      "type": "array",
+      "required": true,
+      "additionalItems": false,
+      "items": {
+        "$ref": "#"
+      }
+    },
+    "ref": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "startLabel": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "boolean"
+    },
+    "music": {
+      "type": "string",
+      "format": "uri"
+    },
+    "sound": {
+      "type": "string",
+      "format": "uri"
+    },
+    "backgrounds": {
+      "type": "array",
+      "additionalItems": false,
+      "items": {
+        "$ref": "http://schema.cardwirth.org/background_image"
+      }
+    },
+    "money": {
+      "type": "integer",
+      "maximum": 30000,
+      "minimum": 0
+    },
+    "duration": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "flagName": {
+      "type": "string"
+    },
+    "flag": {
+      "type": "boolean"
+    },
+    "stepsName": {
+      "type": "string"
+    },
+    "step": {
+      "type": "integer",
+      "maximum": 9,
+      "minimum": 0
+    },
+    "completedStamp": {
+      "type": "string"
+    },
+    "gossip": {
+      "type": "string"
+    },
+    "achievement": {
+      "type": "string"
+    },
+    "achievementScore": {
+      "type": "integer"
+    },
+    "number": {
+      "type": "integer"
+    },
+    "targetScope": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#eventTargetScope"
+      }
+    },
+    "image": {
+      "type": "string",
+      "format": "uri"
+    },
+    "message": {
+      "type": "string"
+    },
+    "messages": {
+      "type": "array",
+      "additionalItems": false,
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "achievements": {
+            "type": "array",
+            "required": true,
+            "additionalItems": false,
+            "items": {
+              "type": "string"
+            }
+          },
+          "message": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    },
+    "probability": {
+      "type": "integer",
+      "maximum": 99,
+      "minimum": 1
+    },
+    "useAverage": {
+      "type": "boolean"
+    },
+    "characterState": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#characterState"
+      }
+    },
+    "targetAll": {
+      "type": "boolean"
+    },
+    "random": {
+      "type": "boolean"
+    },
+    "value": {
+      "type": "integer"
+    },
+    "physicalAptitude": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#physicalAptitude"
+      }
+    },
+    "mentalAptitude": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#mentalAptitude"
+      }
+    },
+    "level": {
+      "type": "integer"
+    },
+    "target": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#eventTarget"
+      }
+    },
+    "phenomenonType": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#phenomenonType"
+      }
+    },
+    "reactionType": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#reactionType"
+      }
+    },
+    "successRate": {
+      "type": "integer",
+      "maximum": 5,
+      "minimum": -5
+    },
+    "animationType": {
+      "required": false,
+      "extends": {
+        "$ref": "http://schema.cardwirth.org/utils#animationType"
+      }
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "$ref": "http://schema.cardwirth.org/effect"
+      }
+    }
+  }
+}
