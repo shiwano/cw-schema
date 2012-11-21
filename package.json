@@ -21,7 +21,6 @@
       "url": "https://github.com/shiwano/cw-schema/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/cw-schema",
   "engines": {
     "node": ">= 0.8.0"
   },
