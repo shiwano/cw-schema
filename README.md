@@ -3,12 +3,7 @@
 New CardWirth data schema
 
 ## Getting Started
-Install the module with: `npm install cw-schema`
-
-```javascript
-var cw_schema = require('cw-schema');
-cw_schema.awesome(); // "awesome"
-```
+_(Coming soon)_
 
 ## Documentation
 _(Coming soon)_
@@ -23,5 +18,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 Shogo Iwano  
+Copyright (c) 2012 Shogo Iwano
 Licensed under the MIT license.
