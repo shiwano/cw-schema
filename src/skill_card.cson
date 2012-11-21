@@ -1,0 +1,26 @@
+{
+  type: 'object'
+  $schema: 'http://json-schema.org/draft-03/schema#'
+  id: 'http://schema.cardwirth.org/skill_card#'
+  required: true
+  additionalProperties: false
+  extends:
+    $ref: 'http://schema.cardwirth.org/card'
+
+  properties:
+    type:
+      enum: ['skillCard']
+      required: true
+
+    level:
+      type: 'integer'
+      maximum: 999
+      minimum: 0
+      required: true
+
+    usageLimit:
+      type: 'integer'
+      maximum: 10
+      minimum: 0
+      required: true
+}

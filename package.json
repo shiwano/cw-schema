@@ -1,0 +1,35 @@
+{
+  "name": "cw-schema",
+  "description": "New CardWirth data schema",
+  "version": "0.1.0",
+  "homepage": "https://github.com/shiwano/cw-schema",
+  "author": {
+    "name": "Shogo Iwano",
+    "email": "shiwano@gmail.com",
+    "url": "http://twitter.com/shiwano"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shiwano/cw-schema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shiwano/cw-schema/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/shiwano/cw-schema/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/cw-schema",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0a"
+  },
+  "keywords": []
+}

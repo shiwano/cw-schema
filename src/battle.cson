@@ -1,0 +1,73 @@
+{
+  type: 'object'
+  $schema: 'http://json-schema.org/draft-03/schema#'
+  id: 'http://schema.cardwirth.org/battle#'
+  required: true
+  additionalProperties: false
+  properties:
+    type:
+      enum: ['battle']
+      required: true
+
+    id:
+      type: 'integer'
+      minimum: 0
+      required: true
+
+    name:
+      type: 'string'
+      required: true
+
+    cardArrangement:
+      $ref: 'http://schema.cardwirth.org/utils#cardArrangement'
+      required: true
+
+    music:
+      type: 'string'
+      format: 'uri'
+
+    events:
+      type: 'array'
+      required: true
+      items:
+        $ref: 'http://schema.cardwirth.org/event'
+
+    enemyCards:
+      type: 'array'
+      required: true
+      items:
+        type: 'object'
+        id: 'http://schema.cardwirth.org/battle#enemy_card'
+        additionalProperties: false
+        properties:
+          characterId:
+            type: 'integer'
+            minimum: 0
+            required: true
+
+          flag:
+            type: 'string'
+            required: true
+
+          scale:
+            type: 'integer'
+            required: true
+
+          left:
+            type: 'integer'
+            required: true
+
+          top:
+            type: 'integer'
+            required: true
+
+          escapable:
+            type: 'boolean'
+            required: true
+
+          events:
+            type: 'array'
+            required: true
+            items:
+              $ref: 'http://schema.cardwirth.org/event'
+}

@@ -1,0 +1,26 @@
+{
+  type: 'object'
+  $schema: 'http://json-schema.org/draft-03/schema#'
+  id: 'http://schema.cardwirth.org/package#'
+  required: true
+  additionalProperties: false
+  properties:
+    type:
+      enum: ['package']
+      required: true
+
+    id:
+      type: 'integer'
+      minimum: 0
+      required: true
+
+    name:
+      type: 'string'
+      required: true
+
+    events:
+      type: 'array'
+      required: true
+      items:
+        $ref: 'http://schema.cardwirth.org/simple_event'
+}
