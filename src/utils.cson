@@ -3,75 +3,156 @@
   id: 'http://schema.cardwirth.org/utils#'
   type: 'object'
   properties:
+    # イベントエレメントの効果対象（単一）
     eventTarget:
       id: '#eventTarget'
-      description: '現在選択中のメンバ, ランダムメンバ, 現在選択中以外のメンバ, 現在選択中のメンバ・睡眠有効, ランダムメンバ・睡眠有効, パーティ全員・睡眠有効, パーティ全員（効果コンテント用）'
       required: true
-      enum: ['selected', 'random', 'unselected', 'selectedIgnoreSleep', 'randomIgnoreSleep', 'partyIgnoreSleep', 'party']
+      enum: [
+        'selected'            # 現在選択中のメンバ
+        'random'              # ランダムメンバ
+        'unselected'          # 現在選択中以外のメンバ
+        'selectedIgnoreSleep' # 現在選択中のメンバ・睡眠有効
+        'randomIgnoreSleep'   # ランダムメンバ・睡眠有効
+        'partyIgnoreSleep'    # パーティ全員・睡眠有効
+        'party'               # パーティ全員（効果コンテント用）
+      ]
 
+    # イベントエレメントの効果対象（複数）
     eventTargetScope:
       id: '#eventTargetScope'
-      description: '現在選択中のメンバ, ランダムメンバ, パーティ全員, 荷物袋, 全体・荷物袋含む, フィールド全体'
       required: true
-      enum: ['selected', 'random', 'party', 'inventory', 'partyAndInventory', 'all']
+      enum: [
+        'selected'          # 現在選択中のメンバ
+        'random'            # ランダムメンバ
+        'party'             # パーティ全員
+        'inventory'         # 荷物袋
+        'partyAndInventory' # 全体・荷物袋含む
+        'all'               # フィールド全体
+      ]
 
+    # メニューカードの並び方
     cardArrangement:
       id: '#cardArrangement'
-      description: '自動配置, 指定配置'
       required: true
-      enum: ['auto', 'custom']
+      enum: [
+        'auto'   # 自動配置
+        'custom' # 指定配置
+      ]
 
+    # キャラクターの状態
     characterState:
       id: '#characterState'
-      description: '行動可能, 行動不可, 生存, 非生存, 健康, 負傷, 重症, 意識不明, 毒, 睡眠, 呪縛, 麻痺・石化'
       required: true
-      enum: ['active', 'inactive', 'alive', 'dead', 'fine', 'injured', 'heavyInjured', 'unconscious', 'poison', 'sleep', 'bind', 'paralyzed']
+      enum: [
+        'active'       # 行動可能
+        'inactive'     # 行動不可
+        'alive'        # 生存
+        'dead'         # 非生存
+        'fine'         # 健康
+        'injured'      # 負傷
+        'heavyInjured' # 重症
+        'unconscious'  # 意識不明
+        'poison'       # 毒
+        'sleep'        # 睡眠
+        'bind'         # 呪縛
+        'paralyzed'    # 麻痺・石化
+      ]
 
+    # カード効果の現象属性
     phenomenonType:
       id: '#phenomenonType'
-      description: '物理, 魔法, 魔法的物理, 物理的魔法, 無'
       required: true
-      enum: ['physical', 'magical', 'magicalPhysical', 'physicalMagical', 'non']
+      enum: [
+        'physical'        # 物理
+        'magical'         # 魔法
+        'magicalPhysical' # 魔法的物理
+        'physicalMagical' # 物理的魔法
+        'non'             # 無
+      ]
 
+    # カード効果の反応属性
     reactionType:
       id: '#reactionType'
-      description: '物理属性, 抵抗属性, 必中属性'
       required: true
-      enum: ['evasion', 'resistance', 'ineluctability']
+      enum: [
+        'evasion'        # 物理的属性
+        'resistance'     # 抵抗属性
+        'ineluctability' # 必中属性
+      ]
 
+    # カードのアニメーションタイプ
     animationType:
       id: '#animationType'
-      description: '無し, 反転, 横振動, 縦振動'
       required: true
-      enum: ['none', 'turnover', 'lateralVibration', 'longitudinalVibration']
+      enum: [
+        'none'                  # 無し
+        'turnover'              # 反転
+        'lateralVibration'      # 横新道
+        'longitudinalVibration' # 縦振動
+      ]
 
+    # 能力適性
     physicalAptitude:
       id: '#physicalAptitude'
-      description: '器用, 素早さ, 知力, 筋力, 生命, 精神'
       required: true
-      enum: ['dex', 'agl', 'int', 'str', 'vit', 'min']
+      enum: [
+        'dex' # 器用
+        'agl' # 素早さ
+        'int' # 知力
+        'str' # 筋力
+        'vit' # 生命
+        'min' # 精神
+      ]
 
+    # 性格適性
     mentalAptitude:
       id: '#mentalAptitude'
-      description: '好戦, 平和, 社交, 内向, 勇敢, 臆病, 慎重, 大胆, 狡猾, 正直'
       required: true
-      enum: ['aggressiveness', 'gentleness', 'cheerfulness', 'depressiveness', 'braveness', 'timidness', 'carefulness', 'boldness', 'craftiness', 'truthfulness']
+      enum: [
+        'aggressiveness' # 好戦
+        'gentleness'     # 平和
+        'cheerfulness'   # 社交
+        'depressiveness' # 内向
+        'braveness'      # 勇敢
+        'timidness'      # 臆病
+        'carefulness'    # 慎重
+        'boldness'       # 大胆
+        'craftiness'     # 狡猾
+        'truthfulness'   # 正直
+      ]
 
+    # カード効果の対象
     cardTarget:
       id: '#cardTarget'
-      description: '対象なし, 使用者, 味方, 敵, 敵・味方両方'
       required: true
-      enum: ['none', 'user', 'party', 'enemies', 'partyAndEnemies']
+      enum: [
+        'none'            # 対象なし
+        'user'            # 使用者
+        'party'           # 味方
+        'enemies'         # 敵
+        'partyAndEnemies' # 敵・味方両方
+      ]
 
+    # レアリティ
     rarity:
       id: '#rarity'
-      description: '通常, レア, プレミア'
       required: true
-      enum: ['common', 'rare', 'premium']
+      enum: [
+        'common'  # 通常
+        'rare'    # レア
+        'premium' # プレミア
+      ]
 
+    # 精神状態
     mentality:
       id: '#mentality'
-      description: '正常, 恐慌, 勇敢, 激昂, 混乱, 睡眠'
       required: true
-      enum: ['normal', 'panic', 'brave', 'overheat', 'confusion', 'sleep']
+      enum: [
+        'normal'    # 正常
+        'panic'     # 恐慌
+        'brave'     # 勇敢
+        'overheat'  # 激昂
+        'confusion' # 混乱
+        'sleep'     # 睡眠
+      ]
 }
