@@ -1,12 +1,1 @@
-{
-  "type": "object",
-  "$schema": "http://json-schema.org/draft-03/schema#",
-  "id": "http://schema.cardwirth.org/simple_event#",
-  "required": true,
-  "additionalProperties": false,
-  "properties": {
-    "children": {
-      "$ref": "http://schema.cardwirth.org/event_element#eventElements"
-    }
-  }
-}
+{"type":"object","$schema":"http://json-schema.org/draft-03/schema#","id":"http://schema.cardwirth.org/simple_event#","required":true,"additionalProperties":false,"properties":{"children":{"$ref":"http://schema.cardwirth.org/event_element#eventElements"}}}

@@ -6,7 +6,7 @@ module.exports = (grunt) ->
       schemas:
         src: 'src'
         dest: 'lib'
-        space: 2
+        # space: 2
 
   # Default task.
   grunt.loadTasks 'tasks'
