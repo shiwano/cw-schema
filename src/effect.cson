@@ -6,19 +6,68 @@
   additionalProperties: false
   properties:
     element:
-      description: '全, 肉体, 精神, 神聖, 魔力, 炎, 冷'
       required: true
-      enum: ['non', 'body', 'mind', 'holy', 'spell', 'fire', 'cold']
+      enum: [
+        'non'   # 全属性
+        'body'  # 肉体属性
+        'mind'  # 精神属性
+        'holy'  # 神聖属性
+        'spell' # 魔力属性
+        'fire'  # 炎属性
+        'cold'  # 冷属性
+      ]
 
     type:
-      description: '回復, ダメージ, 吸収, 麻痺状態, 麻痺解除, 中毒状態, 中毒解除, 精神力回復, 精神力不能, 睡眠状態, 混乱状態, 激昂状態, 勇敢状態, 恐慌状態, 正常状態, 束縛状態, 束縛解除, 沈黙状態, 沈黙解除, 暴露状態, 暴露解除, 魔法無効化状態, 魔法無効化解除, 行動力変化, 回避力変化, 抵抗力変化, 防御力変化, 対象消去, カード消去, 召喚獣消去, 通常攻撃, 渾身の一撃, 会心の一撃, フェイント, 防御, 見切り, 混乱, 特殊技能, 召喚獣召喚'
       required: true
-      enum: ['heal', 'damage', 'absorb', 'paralyze', 'disParalyze', 'poison', 'disPoison', 'recoverSkillPoint', 'loseSkillPoint', 'sleep', 'confuse', 'overheat', 'encourage', 'panic', 'relaxMind', 'bind', 'disBind', 'silence', 'disSilence', 'reveal', 'conceal', 'enableMagicproof', 'disableMagicproof', 'enhanceActionLevel', 'enhanceEvasion', 'enhanceResistance', 'enhanceDefense', 'vanishTarget', 'vanishCards', 'vanishBeasts', 'dealAttackCard', 'dealPowerfulAttackCard', 'dealCriticalAttackCard', 'dealFeintCard', 'dealDefenseCard', 'dealDistanceCard', 'dealConfuseCard', 'dealSkillCard', 'summonBeast']
+      enum: [
+        'heal'                   # 回復
+        'damage'                 # ダメージ
+        'absorb'                 # 吸収
+        'paralyze'               # 麻痺状態
+        'disParalyze'            # 麻痺解除
+        'poison'                 # 中毒状態
+        'disPoison'              # 毒解除
+        'recoverSkillPoint'      # 精神力回復
+        'loseSkillPoint'         # 精神力不能
+        'sleep'                  # 睡眠状態
+        'confuse'                # 混乱状態
+        'overheat'               # 激昂状態
+        'encourage'              # 勇敢状態
+        'panic'                  # 恐慌状態
+        'relaxMind'              # 正常状態
+        'bind'                   # 束縛状態
+        'disBind'                # 束縛解除
+        'silence'                # 沈黙状態
+        'disSilence'             # 沈黙解除
+        'reveal'                 # 暴露状態
+        'conceal'                # 暴露解除
+        'enableMagicproof'       # 魔法無効化状態
+        'disableMagicproof'      # 魔法無効化解除
+        'enhanceActionLevel'     # 行動力変化
+        'enhanceEvasion'         # 回避力変化
+        'enhanceResistance'      # 抵抗力変化
+        'enhanceDefense'         # 防御力変化
+        'vanishTarget'           # 対象消去
+        'vanishCards'            # カード消去
+        'vanishBeasts'           # 召喚獣消去
+        'dealAttackCard'         # 通常攻撃配布
+        'dealPowerfulAttackCard' # 渾身の一撃配布
+        'dealCriticalAttackCard' # 会心の一撃配布
+        'dealFeintCard'          # フェイント配布
+        'dealDefenseCard'        # 防御配布
+        'dealDistanceCard'       # 見切り配布
+        'dealConfuseCard'        # 混乱配布
+        'dealSkillCard'          # 特殊技能配布
+        'summonBeast'            # 召喚獣召喚
+      ]
 
     damageType:
       id: '#damageType'
-      description: 'レベル比, 効果値, 最大値'
-      enum: ['levelRatio', 'default', 'max']
+      enum: [
+        'levelRatio' # レベル比
+        'default'    # 効果値
+        'max'        # 最大値
+      ]
 
     value:
       type: 'integer'
