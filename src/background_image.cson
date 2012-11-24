@@ -32,7 +32,7 @@
       type: 'boolean'
       required: true
 
-    flag:
+    flagName:
       type: 'string'
       required: true
 }

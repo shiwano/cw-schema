@@ -48,7 +48,7 @@
             "minimum": 0,
             "required": true
           },
-          "flag": {
+          "flagName": {
             "type": "string",
             "required": true
           },

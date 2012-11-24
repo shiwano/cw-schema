@@ -51,7 +51,7 @@
             type: 'string'
             required: true
 
-          flag:
+          flagName:
             type: 'string'
             required: true
 
