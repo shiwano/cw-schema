@@ -37,7 +37,14 @@
       required: true
 
     target:
-      $ref: 'http://schema.cardwirth.org/utils#cardTarget'
+      required: true
+      enum: [
+        'none'            # 対象なし
+        'user'            # 使用者
+        'party'           # 味方
+        'enemies'         # 敵
+        'partyAndEnemies' # 敵・味方両方
+      ]
 
     phenomenonType:
       $ref: 'http://schema.cardwirth.org/utils#phenomenonType'
@@ -89,7 +96,12 @@
         type: 'string'
 
     rarity:
-      $ref: 'http://schema.cardwirth.org/utils#rarity'
+      required: true
+      enum: [
+        'common'  # 通常
+        'rare'    # レア
+        'premium' # プレミア
+      ]
 
     scenario:
       type: 'string'

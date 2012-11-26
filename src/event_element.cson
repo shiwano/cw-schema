@@ -151,8 +151,14 @@
 
     targetScope:
       required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#eventTargetScope'
+      enum: [
+        'selected'          # 現在選択中のメンバ
+        'random'            # ランダムメンバ
+        'party'             # パーティ全員
+        'inventory'         # 荷物袋
+        'partyAndInventory' # 全体・荷物袋含む
+        'all'               # フィールド全体
+      ]
 
     image:
       type: 'string'
@@ -189,8 +195,20 @@
 
     characterState:
       required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#characterState'
+      enum: [
+        'active'       # 行動可能
+        'inactive'     # 行動不可
+        'alive'        # 生存
+        'dead'         # 非生存
+        'fine'         # 健康
+        'injured'      # 負傷
+        'heavyInjured' # 重症
+        'unconscious'  # 意識不明
+        'poison'       # 毒
+        'sleep'        # 睡眠
+        'bind'         # 呪縛
+        'paralyzed'    # 麻痺・石化
+      ]
 
     targetAll:
       type: 'boolean'
@@ -216,8 +234,15 @@
 
     target:
       required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#eventTarget'
+      enum: [
+        'selected'            # 現在選択中のメンバ
+        'random'              # ランダムメンバ
+        'unselected'          # 現在選択中以外のメンバ
+        'selectedIgnoreSleep' # 現在選択中のメンバ・睡眠有効
+        'randomIgnoreSleep'   # ランダムメンバ・睡眠有効
+        'partyIgnoreSleep'    # パーティ全員・睡眠有効
+        'party'               # パーティ全員（効果コンテント用）
+      ]
 
     phenomenonType:
       required: false

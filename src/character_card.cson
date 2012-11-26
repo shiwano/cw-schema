@@ -157,7 +157,15 @@
       required: true
 
     mentality:
-      $ref: 'http://schema.cardwirth.org/utils#mentality'
+      required: true
+      enum: [
+        'normal'    # 正常
+        'panic'     # 恐慌
+        'brave'     # 勇敢
+        'overheat'  # 激昂
+        'confusion' # 混乱
+        'sleep'     # 睡眠
+      ]
 
     mentalityCounter:
       type: 'integer'

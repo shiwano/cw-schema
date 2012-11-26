@@ -3,33 +3,6 @@
   id: 'http://schema.cardwirth.org/utils#'
   type: 'object'
   properties:
-    # イベントエレメントの効果対象（単一）
-    eventTarget:
-      id: '#eventTarget'
-      required: true
-      enum: [
-        'selected'            # 現在選択中のメンバ
-        'random'              # ランダムメンバ
-        'unselected'          # 現在選択中以外のメンバ
-        'selectedIgnoreSleep' # 現在選択中のメンバ・睡眠有効
-        'randomIgnoreSleep'   # ランダムメンバ・睡眠有効
-        'partyIgnoreSleep'    # パーティ全員・睡眠有効
-        'party'               # パーティ全員（効果コンテント用）
-      ]
-
-    # イベントエレメントの効果対象（複数）
-    eventTargetScope:
-      id: '#eventTargetScope'
-      required: true
-      enum: [
-        'selected'          # 現在選択中のメンバ
-        'random'            # ランダムメンバ
-        'party'             # パーティ全員
-        'inventory'         # 荷物袋
-        'partyAndInventory' # 全体・荷物袋含む
-        'all'               # フィールド全体
-      ]
-
     # メニューカードの並び方
     cardArrangement:
       id: '#cardArrangement'
@@ -37,25 +10,6 @@
       enum: [
         'auto'   # 自動配置
         'custom' # 指定配置
-      ]
-
-    # キャラクターの状態
-    characterState:
-      id: '#characterState'
-      required: true
-      enum: [
-        'active'       # 行動可能
-        'inactive'     # 行動不可
-        'alive'        # 生存
-        'dead'         # 非生存
-        'fine'         # 健康
-        'injured'      # 負傷
-        'heavyInjured' # 重症
-        'unconscious'  # 意識不明
-        'poison'       # 毒
-        'sleep'        # 睡眠
-        'bind'         # 呪縛
-        'paralyzed'    # 麻痺・石化
       ]
 
     # カード効果の現象属性
@@ -119,40 +73,5 @@
         'boldness'       # 大胆
         'craftiness'     # 狡猾
         'truthfulness'   # 正直
-      ]
-
-    # カード効果の対象
-    cardTarget:
-      id: '#cardTarget'
-      required: true
-      enum: [
-        'none'            # 対象なし
-        'user'            # 使用者
-        'party'           # 味方
-        'enemies'         # 敵
-        'partyAndEnemies' # 敵・味方両方
-      ]
-
-    # レアリティ
-    rarity:
-      id: '#rarity'
-      required: true
-      enum: [
-        'common'  # 通常
-        'rare'    # レア
-        'premium' # プレミア
-      ]
-
-    # 精神状態
-    mentality:
-      id: '#mentality'
-      required: true
-      enum: [
-        'normal'    # 正常
-        'panic'     # 恐慌
-        'brave'     # 勇敢
-        'overheat'  # 激昂
-        'confusion' # 混乱
-        'sleep'     # 睡眠
       ]
 }
