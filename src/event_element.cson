@@ -219,15 +219,15 @@
     value:
       type: 'integer'
 
-    physicalAptitude:
+    abilityAptitude:
       required: false
       extends:
-        $ref: 'http://schema.cardwirth.org/utils#physicalAptitude'
+        $ref: 'http://schema.cardwirth.org/utils#abilityAptitude'
 
-    mentalAptitude:
+    personalAptitude:
       required: false
       extends:
-        $ref: 'http://schema.cardwirth.org/utils#mentalAptitude'
+        $ref: 'http://schema.cardwirth.org/utils#personalAptitude'
 
     level:
       type: 'integer'

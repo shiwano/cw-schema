@@ -46,8 +46,8 @@
       ]
 
     # 能力適性
-    physicalAptitude:
-      id: '#physicalAptitude'
+    abilityAptitude:
+      id: '#abilityAptitude'
       required: true
       enum: [
         'dex' # 器用
@@ -59,8 +59,8 @@
       ]
 
     # 性格適性
-    mentalAptitude:
-      id: '#mentalAptitude'
+    personalAptitude:
+      id: '#personalAptitude'
       required: true
       enum: [
         'aggressiveness' # 好戦

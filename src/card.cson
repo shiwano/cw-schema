@@ -22,11 +22,11 @@
       format: 'uri'
       required: true
 
-    physicalAptitude:
-      $ref: 'http://schema.cardwirth.org/utils#physicalAptitude'
+    abilityAptitude:
+      $ref: 'http://schema.cardwirth.org/utils#abilityAptitude'
 
-    mentalAptitude:
-      $ref: 'http://schema.cardwirth.org/utils#mentalAptitude'
+    personalAptitude:
+      $ref: 'http://schema.cardwirth.org/utils#personalAptitude'
 
     ignoreSilence:
       type: 'boolean'
