@@ -2,6 +2,10 @@
 module.exports = (grunt) ->
   # Project configuration.
   grunt.initConfig
+    watch:
+      files: ['src/**/*.cson']
+      tasks: 'cson'
+
     cson:
       schemas:
         src: 'src'
@@ -10,4 +14,5 @@ module.exports = (grunt) ->
 
   # Default task.
   grunt.loadTasks 'tasks'
+  grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.registerTask 'default', ['cson']

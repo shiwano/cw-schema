@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.0a",
+    "grunt-contrib-watch": "latest",
     "cson": "~1.4.0"
   },
   "keywords": []
