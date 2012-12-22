@@ -1,18 +1,27 @@
-'use strict'
+path = require 'path'
+fs = require 'fs'
+
 module.exports = (grunt) ->
-  # Project configuration.
   grunt.initConfig
     watch:
-      files: ['src/**/*.cson']
-      tasks: 'cson'
+      files: ['src/**/*.yml']
+      tasks: 'yaml'
 
-    cson:
+    yaml:
       schemas:
-        src: 'src'
+        options:
+          ignored: /^_/
+          space: 0
+          constructors:
+            '!include': (node, yaml) ->
+              filepath = path.join 'src', node.value
+              data = fs.readFileSync filepath, 'utf-8'
+              yaml.load data
+        src: 'src/**/*.yml'
         dest: 'lib'
-        # space: 2
 
   # Default task.
   grunt.loadTasks 'tasks'
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.registerTask 'default', ['cson']
+  grunt.loadNpmTasks 'grunt-yaml'
+  grunt.registerTask 'default', ['yaml']
