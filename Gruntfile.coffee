@@ -3,9 +3,12 @@ fs = require 'fs'
 
 module.exports = (grunt) ->
   grunt.initConfig
+    clean:
+      tests: ['lib']
+
     watch:
       files: ['src/**/*.yml']
-      tasks: 'yaml'
+      tasks: ['clean', 'yaml']
 
     yaml:
       schemas:
@@ -23,5 +26,6 @@ module.exports = (grunt) ->
   # Default task.
   grunt.loadTasks 'tasks'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-yaml'
-  grunt.registerTask 'default', ['yaml']
+  grunt.registerTask 'default', ['clean', 'yaml']

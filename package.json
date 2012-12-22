@@ -30,7 +30,8 @@
   "devDependencies": {
     "grunt": "~0.4.0a",
     "grunt-contrib-watch": "latest",
-    "grunt-yaml": "~0.1.0"
+    "grunt-yaml": "~0.1.0",
+    "grunt-contrib-clean": "~0.4.0a"
   },
   "keywords": []
 }
