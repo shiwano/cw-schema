@@ -33,5 +33,8 @@
     "grunt-yaml": "~0.1.0",
     "grunt-contrib-clean": "~0.4.0a"
   },
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "underscore": "~1.4.3"
+  }
 }

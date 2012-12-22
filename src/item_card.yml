@@ -3,46 +3,47 @@ $schema: http://json-schema.org/draft-03/schema#
 id: http://schema.cardwirth.org/item_card#
 required: true
 additionalProperties: false
-extends:
-  $ref: http://schema.cardwirth.org/card
 
 properties:
-  type:
-    enum: [itemCard]
-    required: true
+  !extend |
+    - partials/_card_properties.yml
+    -
+      type:
+        enum: [itemCard]
+        required: true
 
-  usageLimit:
-    type: integer
-    minimum: 0
-    maximum: 10
-    required: true
+      usageLimit:
+        type: integer
+        minimum: 0
+        maximum: 10
+        required: true
 
-  usageLimitMax:
-    type: integer
-    minimum: 0
-    maximum: 10
-    required: true
+      usageLimitMax:
+        type: integer
+        minimum: 0
+        maximum: 10
+        required: true
 
-  price:
-    type: integer
-    minimum: 0
-    maximum: 30000
-    required: true
+      price:
+        type: integer
+        minimum: 0
+        maximum: 30000
+        required: true
 
-  evasionBonusAlways:
-    type: integer
-    maximum: 10
-    minimum: -10
-    required: true
+      evasionBonusAlways:
+        type: integer
+        maximum: 10
+        minimum: -10
+        required: true
 
-  resistanceBonusAlways:
-    type: integer
-    maximum: 10
-    minimum: -10
-    required: true
+      resistanceBonusAlways:
+        type: integer
+        maximum: 10
+        minimum: -10
+        required: true
 
-  defenseBonusAlways:
-    type: integer
-    maximum: 10
-    minimum: -10
-    required: true
+      defenseBonusAlways:
+        type: integer
+        maximum: 10
+        minimum: -10
+        required: true
