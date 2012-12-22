@@ -1,81 +1,79 @@
-{
-  type: 'object'
-  $schema: 'http://json-schema.org/draft-03/schema#'
-  id: 'http://schema.cardwirth.org/scene#'
-  required: true
-  additionalProperties: false
-  properties:
-    type:
-      enum: ['scene']
+type: object
+$schema: http://json-schema.org/draft-03/schema#
+id: http://schema.cardwirth.org/scene#
+required: true
+additionalProperties: false
+properties:
+  type:
+    enum: [scene]
+    required: true
+
+  id:
+    type: integer
+    minimum: 0
+    required: true
+
+  name:
+    type: string
+    required: true
+
+  cardArrangement:
+    $ref: http://schema.cardwirth.org/utils#cardArrangement
+    required: true
+
+  backgrounds:
+    type: array
+    required: true
+    items:
+      $ref: http://schema.cardwirth.org/background_image
+
+  events:
+    type: array
+    required: true
+    items:
+      $ref: http://schema.cardwirth.org/event
+
+  menuCards:
+    type: array
+    required: true
+    items:
+      type: object
+      id: http://schema.cardwirth.org/scene#menu_card
       required: true
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          required: true
 
-    id:
-      type: 'integer'
-      minimum: 0
-      required: true
+        description:
+          type: string
+          required: true
 
-    name:
-      type: 'string'
-      required: true
+        flagName:
+          type: string
+          required: true
 
-    cardArrangement:
-      $ref: 'http://schema.cardwirth.org/utils#cardArrangement'
-      required: true
+        scale:
+          type: integer
+          minimum: 0
+          required: true
 
-    backgrounds:
-      type: 'array'
-      required: true
-      items:
-        $ref: 'http://schema.cardwirth.org/background_image'
+        left:
+          type: integer
+          required: true
 
-    events:
-      type: 'array'
-      required: true
-      items:
-        $ref: 'http://schema.cardwirth.org/event'
+        top:
+          type: integer
+          required: true
 
-    menuCards:
-      type: 'array'
-      required: true
-      items:
-        type: 'object'
-        id: 'http://schema.cardwirth.org/scene#menu_card'
-        required: true
-        additionalProperties: false
-        properties:
-          name:
-            type: 'string'
-            required: true
+        events:
+          type: array
+          required: true
+          items:
+            $ref: http://schema.cardwirth.org/event
 
-          description:
-            type: 'string'
-            required: true
-
-          flagName:
-            type: 'string'
-            required: true
-
-          scale:
-            type: 'integer'
-            minimum: 0
-            required: true
-
-          left:
-            type: 'integer'
-            required: true
-
-          top:
-            type: 'integer'
-            required: true
-
-          events:
-            type: 'array'
-            required: true
-            items:
-              $ref: 'http://schema.cardwirth.org/event'
-
-          image:
-            type: 'string'
-            format: 'uri'
-            required: true
-}
+        image:
+          type: string
+          format: uri
+          required: true

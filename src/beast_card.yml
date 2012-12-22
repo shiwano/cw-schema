@@ -1,24 +1,22 @@
-{
-  type: 'object'
-  $schema: 'http://json-schema.org/draft-03/schema#'
-  id: 'http://schema.cardwirth.org/beast_card#'
-  required: true
-  additionalProperties: false
-  extends:
-    $ref: 'http://schema.cardwirth.org/card'
+type: object
+$schema: http://json-schema.org/draft-03/schema#
+id: http://schema.cardwirth.org/beast_card#
+required: true
+additionalProperties: false
+extends:
+  $ref: http://schema.cardwirth.org/card
 
-  properties:
-    type:
-      enum: ['beastCard']
-      required: true
+properties:
+  type:
+    enum: [beastCard]
+    required: true
 
-    usageLimit:
-      type: 'integer'
-      maximum: 10
-      minimum: 0
-      required: true
+  usageLimit:
+    type: integer
+    maximum: 10
+    minimum: 0
+    required: true
 
-    attachment:
-      type: 'boolean'
-      required: true
-}
+  attachment:
+    type: boolean
+    required: true

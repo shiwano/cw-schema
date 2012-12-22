@@ -1,84 +1,79 @@
-{
-  type: 'object'
-  $schema: 'http://json-schema.org/draft-03/schema#'
-  id: 'http://schema.cardwirth.org/effect#'
-  required: true
-  additionalProperties: false
-  properties:
-    element:
-      required: true
-      enum: [
-        'non'   # 全属性
-        'body'  # 肉体属性
-        'mind'  # 精神属性
-        'holy'  # 神聖属性
-        'spell' # 魔力属性
-        'fire'  # 炎属性
-        'cold'  # 冷属性
-      ]
+type: object
+$schema: http://json-schema.org/draft-03/schema#
+id: http://schema.cardwirth.org/effect#
+required: true
+additionalProperties: false
+properties:
+  element:
+    required: true
+    enum:
+      - non   # 全属性
+      - body  # 肉体属性
+      - mind  # 精神属性
+      - holy  # 神聖属性
+      - spell # 魔力属性
+      - fire  # 炎属性
+      - cold  # 冷属性
 
-    type:
-      required: true
-      enum: [
-        'heal'                   # 回復
-        'damage'                 # ダメージ
-        'absorb'                 # 吸収
-        'paralyze'               # 麻痺状態
-        'disParalyze'            # 麻痺解除
-        'poison'                 # 中毒状態
-        'disPoison'              # 毒解除
-        'recoverSkillPoint'      # 精神力回復
-        'loseSkillPoint'         # 精神力不能
-        'sleep'                  # 睡眠状態
-        'confuse'                # 混乱状態
-        'overheat'               # 激昂状態
-        'encourage'              # 勇敢状態
-        'panic'                  # 恐慌状態
-        'relaxMind'              # 正常状態
-        'bind'                   # 束縛状態
-        'disBind'                # 束縛解除
-        'silence'                # 沈黙状態
-        'disSilence'             # 沈黙解除
-        'reveal'                 # 暴露状態
-        'conceal'                # 暴露解除
-        'enableMagicproof'       # 魔法無効化状態
-        'disableMagicproof'      # 魔法無効化解除
-        'enhanceActionLevel'     # 行動力変化
-        'enhanceEvasion'         # 回避力変化
-        'enhanceResistance'      # 抵抗力変化
-        'enhanceDefense'         # 防御力変化
-        'vanishTarget'           # 対象消去
-        'vanishCards'            # カード消去
-        'vanishBeasts'           # 召喚獣消去
-        'dealAttackCard'         # 通常攻撃配布
-        'dealPowerfulAttackCard' # 渾身の一撃配布
-        'dealCriticalAttackCard' # 会心の一撃配布
-        'dealFeintCard'          # フェイント配布
-        'dealDefenseCard'        # 防御配布
-        'dealDistanceCard'       # 見切り配布
-        'dealConfuseCard'        # 混乱配布
-        'dealSkillCard'          # 特殊技能配布
-        'summonBeast'            # 召喚獣召喚
-      ]
+  type:
+    required: true
+    enum:
+      - heal                   # 回復
+      - damage                 # ダメージ
+      - absorb                 # 吸収
+      - paralyze               # 麻痺状態
+      - disParalyze            # 麻痺解除
+      - poison                 # 中毒状態
+      - disPoison              # 毒解除
+      - recoverSkillPoint      # 精神力回復
+      - loseSkillPoint         # 精神力不能
+      - sleep                  # 睡眠状態
+      - confuse                # 混乱状態
+      - overheat               # 激昂状態
+      - encourage              # 勇敢状態
+      - panic                  # 恐慌状態
+      - relaxMind              # 正常状態
+      - bind                   # 束縛状態
+      - disBind                # 束縛解除
+      - silence                # 沈黙状態
+      - disSilence             # 沈黙解除
+      - reveal                 # 暴露状態
+      - conceal                # 暴露解除
+      - enableMagicproof       # 魔法無効化状態
+      - disableMagicproof      # 魔法無効化解除
+      - enhanceActionLevel     # 行動力変化
+      - enhanceEvasion         # 回避力変化
+      - enhanceResistance      # 抵抗力変化
+      - enhanceDefense         # 防御力変化
+      - vanishTarget           # 対象消去
+      - vanishCards            # カード消去
+      - vanishBeasts           # 召喚獣消去
+      - dealAttackCard         # 通常攻撃配布
+      - dealPowerfulAttackCard # 渾身の一撃配布
+      - dealCriticalAttackCard # 会心の一撃配布
+      - dealFeintCard          # フェイント配布
+      - dealDefenseCard        # 防御配布
+      - dealDistanceCard       # 見切り配布
+      - dealConfuseCard        # 混乱配布
+      - dealSkillCard          # 特殊技能配布
+      - summonBeast            # 召喚獣召喚
 
-    damageType:
-      id: '#damageType'
-      enum: [
-        'levelRatio' # レベル比
-        'default'    # 効果値
-        'max'        # 最大値
-      ]
+  damageType:
+    id: '#damageType'
+    enum:
+      - levelRatio # レベル比
+      - default    # 効果値
+      - max        # 最大値
 
-    value:
-      type: 'integer'
+  value:
+    type: integer
 
-    duration:
-      type: 'integer'
+  duration:
+    type: integer
 
-    beastCards:
-      id: '#eventElements'
-      type: 'array'
-      additionalItems: false
-      items:
-        $ref: 'http://schema.cardwirth.org/beast_card'
-}
+  beastCards:
+    id: '#eventElements'
+    type: array
+    additionalItems: false
+    items:
+      $ref: http://schema.cardwirth.org/beast_card

@@ -1,271 +1,265 @@
-{
-  $schema: 'http://json-schema.org/draft-03/schema#'
-  id: 'http://schema.cardwirth.org/event_element#'
-  type: 'object'
-  additionalProperties: false
-  properties:
-    type:
+$schema: http://json-schema.org/draft-03/schema#
+id: http://schema.cardwirth.org/event_element#
+type: object
+additionalProperties: false
+properties:
+  type:
+    required: true
+    enum:
+      - start
+      - startLink
+      - battle
+      - scenarioEnd
+      - gameOver
+      - scene
+      - message
+      - music
+      - background
+      - sound
+      - wait
+      - effect
+      - branchByMemberSelect
+      - branchByAbility
+      - branchByRandom
+      - branchByFlag
+      - flag
+      - branchBySteps
+      - steps
+      - branchByFriend
+      - branchByItem
+      - branchBySkill
+      - branchByInformation
+      - branchByBeast
+      - branchByMoney
+      - branchByAchievement
+      - friend
+      - item
+      - skill
+      - information
+      - beast
+      - money
+      - achievement
+      - friendLoss
+      - itemLoss
+      - skillLoss
+      - informationLoss
+      - beastLoss
+      - moneyLoss
+      - achievementLoss
+      - characterMessage
+      - stepUp
+      - stepDown
+      - flagReverse
+      - branchByCurrentStep
+      - timePassage
+      - branchByLevel
+      - branchByCharacterState
+      - branchByPartyNumber
+      - partyShow
+      - partyHide
+      - effectBreak
+      - startCall
+      - packageLink
+      - packageCall
+      - branchByScene
+      - branchByBattle
+      - branchByCompletedStamp
+      - completedStamp
+      - completedStampLoss
+      - branchByGossip
+      - gossip
+      - gossipLoss
+      - branchByBattleNow
+      - backgroundRebuild
+      - flagCheck
+
+  label:
+    type: string
+    required: true
+
+  children:
+    id: '#eventElements'
+    type: array
+    required: true
+    additionalItems: false
+    items:
+      $ref: '#'
+
+  ref:
+    type: integer
+    minimum: 0
+
+  startLabel:
+    type: string
+
+  completed:
+    type: boolean
+
+  music:
+    type: string
+    format: uri
+
+  sound:
+    type: string
+    format: uri
+
+  backgrounds:
+    type: array
+    additionalItems: false
+    items:
+      $ref: http://schema.cardwirth.org/background_image
+
+  money:
+    type: integer
+    maximum: 30000
+    minimum: 0
+
+  duration:
+    type: integer
+    minimum: 0
+
+  flagName:
+    type: string
+
+  flag:
+    type: boolean
+
+  stepsName:
+    type: string
+
+  step:
+    type: integer
+    maximum: 9
+    minimum: 0
+
+  completedStamp:
+    type: string
+
+  gossip:
+    type: string
+
+  achievement:
+    type: string
+
+  achievementScore:
+    type: integer
+
+  number:
+    type: integer
+
+  targetScope:
+    required: false
+    enum:
+      - selected          # 現在選択中のメンバ
+      - random            # ランダムメンバ
+      - party             # パーティ全員
+      - inventory         # 荷物袋
+      - partyAndInventory # 全体・荷物袋含む
+      - all               # フィールド全体
+
+  image:
+    type: string
+    format: uri
+
+  message:
+    type: string
+
+  messages:
+    type: array
+    additionalItems: false
+    items:
+      type: object
       required: true
-      enum: [
-        'start'
-        'startLink'
-        'battle'
-        'scenarioEnd'
-        'gameOver'
-        'scene'
-        'message'
-        'music'
-        'background'
-        'sound'
-        'wait'
-        'effect'
-        'branchByMemberSelect'
-        'branchByAbility'
-        'branchByRandom'
-        'branchByFlag'
-        'flag'
-        'branchBySteps'
-        'steps'
-        'branchByFriend'
-        'branchByItem'
-        'branchBySkill'
-        'branchByInformation'
-        'branchByBeast'
-        'branchByMoney'
-        'branchByAchievement'
-        'friend'
-        'item'
-        'skill'
-        'information'
-        'beast'
-        'money'
-        'achievement'
-        'friendLoss'
-        'itemLoss'
-        'skillLoss'
-        'informationLoss'
-        'beastLoss'
-        'moneyLoss'
-        'achievementLoss'
-        'characterMessage'
-        'stepUp'
-        'stepDown'
-        'flagReverse'
-        'branchByCurrentStep'
-        'timePassage'
-        'branchByLevel'
-        'branchByCharacterState'
-        'branchByPartyNumber'
-        'partyShow'
-        'partyHide'
-        'effectBreak'
-        'startCall'
-        'packageLink'
-        'packageCall'
-        'branchByScene'
-        'branchByBattle'
-        'branchByCompletedStamp'
-        'completedStamp'
-        'completedStampLoss'
-        'branchByGossip'
-        'gossip'
-        'gossipLoss'
-        'branchByBattleNow'
-        'backgroundRebuild'
-        'flagCheck'
-      ]
+      properties:
+        achievements:
+          type: array
+          required: true
+          additionalItems: false
+          items:
+            type: string
 
-    label:
-      type: 'string'
-      required: true
+        message:
+          type: string
+          required: true
 
-    children:
-      id: '#eventElements'
-      type: 'array'
-      required: true
-      additionalItems: false
-      items:
-        $ref: '#'
+  probability:
+    type: integer
+    maximum: 99
+    minimum: 1
 
-    ref:
-      type: 'integer'
-      minimum: 0
+  useAverage:
+    type: boolean
 
-    startLabel:
-      type: 'string'
+  characterState:
+    required: false
+    enum:
+      - active       # 行動可能
+      - inactive     # 行動不可
+      - alive        # 生存
+      - dead         # 非生存
+      - fine         # 健康
+      - injured      # 負傷
+      - heavyInjured # 重症
+      - unconscious  # 意識不明
+      - poison       # 毒
+      - sleep        # 睡眠
+      - bind         # 呪縛
+      - paralyzed    # 麻痺・石化
 
-    completed:
-      type: 'boolean'
+  targetAll:
+    type: boolean
 
-    music:
-      type: 'string'
-      format: 'uri'
+  random:
+    type: boolean
 
-    sound:
-      type: 'string'
-      format: 'uri'
+  value:
+    type: integer
 
-    backgrounds:
-      type: 'array'
-      additionalItems: false
-      items:
-        $ref: 'http://schema.cardwirth.org/background_image'
+  abilityAptitude:
+    required: false
+    extends:
+      $ref: http://schema.cardwirth.org/utils#abilityAptitude
 
-    money:
-      type: 'integer'
-      maximum: 30000
-      minimum: 0
+  personalAptitude:
+    required: false
+    extends:
+      $ref: http://schema.cardwirth.org/utils#personalAptitude
 
-    duration:
-      type: 'integer'
-      minimum: 0
+  level:
+    type: integer
 
-    flagName:
-      type: 'string'
+  target:
+    required: false
+    enum:
+      - selected            # 現在選択中のメンバ
+      - random              # ランダムメンバ
+      - unselected          # 現在選択中以外のメンバ
+      - selectedIgnoreSleep # 現在選択中のメンバ・睡眠有効
+      - randomIgnoreSleep   # ランダムメンバ・睡眠有効
+      - partyIgnoreSleep    # パーティ全員・睡眠有効
+      - party               # パーティ全員（効果コンテント用）
 
-    flag:
-      type: 'boolean'
+  phenomenonType:
+    required: false
+    extends:
+      $ref: http://schema.cardwirth.org/utils#phenomenonType
 
-    stepsName:
-      type: 'string'
+  reactionType:
+    required: false
+    extends:
+      $ref: http://schema.cardwirth.org/utils#reactionType
 
-    step:
-      type: 'integer'
-      maximum: 9
-      minimum: 0
+  successRate:
+    type: integer
+    maximum: 5
+    minimum: -5
 
-    completedStamp:
-      type: 'string'
+  animationType:
+    required: false
+    extends:
+      $ref: http://schema.cardwirth.org/utils#animationType
 
-    gossip:
-      type: 'string'
-
-    achievement:
-      type: 'string'
-
-    achievementScore:
-      type: 'integer'
-
-    number:
-      type: 'integer'
-
-    targetScope:
-      required: false
-      enum: [
-        'selected'          # 現在選択中のメンバ
-        'random'            # ランダムメンバ
-        'party'             # パーティ全員
-        'inventory'         # 荷物袋
-        'partyAndInventory' # 全体・荷物袋含む
-        'all'               # フィールド全体
-      ]
-
-    image:
-      type: 'string'
-      format: 'uri'
-
-    message:
-      type: 'string'
-
-    messages:
-      type: 'array'
-      additionalItems: false
-      items:
-        type: 'object'
-        required: true
-        properties:
-          achievements:
-            type: 'array'
-            required: true
-            additionalItems: false
-            items:
-              type: 'string'
-
-          message:
-            type: 'string'
-            required: true
-
-    probability:
-      type: 'integer'
-      maximum: 99
-      minimum: 1
-
-    useAverage:
-      type: 'boolean'
-
-    characterState:
-      required: false
-      enum: [
-        'active'       # 行動可能
-        'inactive'     # 行動不可
-        'alive'        # 生存
-        'dead'         # 非生存
-        'fine'         # 健康
-        'injured'      # 負傷
-        'heavyInjured' # 重症
-        'unconscious'  # 意識不明
-        'poison'       # 毒
-        'sleep'        # 睡眠
-        'bind'         # 呪縛
-        'paralyzed'    # 麻痺・石化
-      ]
-
-    targetAll:
-      type: 'boolean'
-
-    random:
-      type: 'boolean'
-
-    value:
-      type: 'integer'
-
-    abilityAptitude:
-      required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#abilityAptitude'
-
-    personalAptitude:
-      required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#personalAptitude'
-
-    level:
-      type: 'integer'
-
-    target:
-      required: false
-      enum: [
-        'selected'            # 現在選択中のメンバ
-        'random'              # ランダムメンバ
-        'unselected'          # 現在選択中以外のメンバ
-        'selectedIgnoreSleep' # 現在選択中のメンバ・睡眠有効
-        'randomIgnoreSleep'   # ランダムメンバ・睡眠有効
-        'partyIgnoreSleep'    # パーティ全員・睡眠有効
-        'party'               # パーティ全員（効果コンテント用）
-      ]
-
-    phenomenonType:
-      required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#phenomenonType'
-
-    reactionType:
-      required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#reactionType'
-
-    successRate:
-      type: 'integer'
-      maximum: 5
-      minimum: -5
-
-    animationType:
-      required: false
-      extends:
-        $ref: 'http://schema.cardwirth.org/utils#animationType'
-
-    effects:
-      type: 'array'
-      items:
-        $ref: 'http://schema.cardwirth.org/effect'
-}
+  effects:
+    type: array
+    items:
+      $ref: http://schema.cardwirth.org/effect
