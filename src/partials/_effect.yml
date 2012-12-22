@@ -1,8 +1,8 @@
 type: object
-$schema: http://json-schema.org/draft-03/schema#
-id: http://schema.cardwirth.org/effect#
+id: '#effect'
 required: true
 additionalProperties: false
+
 properties:
   element:
     required: true
@@ -72,7 +72,6 @@ properties:
     type: integer
 
   beastCards:
-    id: '#eventElements'
     type: array
     additionalItems: false
     items:

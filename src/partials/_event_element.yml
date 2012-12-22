@@ -1,7 +1,7 @@
-$schema: http://json-schema.org/draft-03/schema#
-id: http://schema.cardwirth.org/event_element#
+id: '#event_element'
 type: object
 additionalProperties: false
+
 properties:
   type:
     required: true
@@ -78,12 +78,11 @@ properties:
     required: true
 
   children:
-    id: '#eventElements'
     type: array
     required: true
     additionalItems: false
     items:
-      $ref: '#'
+      $ref: '#event_element'
 
   ref:
     type: integer
@@ -106,8 +105,7 @@ properties:
   backgrounds:
     type: array
     additionalItems: false
-    items:
-      $ref: http://schema.cardwirth.org/background_image
+    items: !include partials/_background_image.yml
 
   money:
     type: integer
@@ -215,15 +213,13 @@ properties:
   value:
     type: integer
 
-  abilityAptitude:
-    required: false
-    extends:
-      $ref: http://schema.cardwirth.org/utils#abilityAptitude
+  abilityAptitude: !extend |
+    - partials/_utils.yml#abilityAptitude
+    - required: false
 
-  personalAptitude:
-    required: false
-    extends:
-      $ref: http://schema.cardwirth.org/utils#personalAptitude
+  personalAptitude: !extend |
+    - partials/_utils.yml#personalAptitude
+    - required: false
 
   level:
     type: integer
@@ -239,27 +235,24 @@ properties:
       - partyIgnoreSleep    # パーティ全員・睡眠有効
       - party               # パーティ全員（効果コンテント用）
 
-  phenomenonType:
-    required: false
-    extends:
-      $ref: http://schema.cardwirth.org/utils#phenomenonType
+  phenomenonType: !extend |
+    - partials/_utils.yml#phenomenonType
+    - required: false
 
-  reactionType:
-    required: false
-    extends:
-      $ref: http://schema.cardwirth.org/utils#reactionType
+  reactionType: !extend |
+    - partials/_utils.yml#reactionType
+    - required: false
 
   successRate:
     type: integer
     maximum: 5
     minimum: -5
 
-  animationType:
-    required: false
-    extends:
-      $ref: http://schema.cardwirth.org/utils#animationType
+  animationType: !extend |
+    - partials/_utils.yml#animationType
+    - required: false
 
   effects:
     type: array
-    items:
-      $ref: http://schema.cardwirth.org/effect
+    additionalItems: false
+    items: !include partials/_effect.yml

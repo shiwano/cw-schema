@@ -1,0 +1,11 @@
+type: object
+id: '#simple_event'
+required: true
+additionalProperties: false
+
+properties:
+  children:
+    type: array
+    required: true
+    additionalItems: false
+    items: !include partials/_event_element.yml

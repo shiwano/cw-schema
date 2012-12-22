@@ -17,10 +17,10 @@ image:
   required: true
 
 abilityAptitude:
-  $ref: http://schema.cardwirth.org/utils#abilityAptitude
+  !include partials/_utils.yml#abilityAptitude
 
 personalAptitude:
-  $ref: http://schema.cardwirth.org/utils#personalAptitude
+  !include partials/_utils.yml#personalAptitude
 
 ignoreSilence:
   type: boolean
@@ -40,10 +40,10 @@ target:
     - partyAndEnemies # 敵・味方両方
 
 phenomenonType:
-  $ref: http://schema.cardwirth.org/utils#phenomenonType
+  !include partials/_utils.yml#phenomenonType
 
 reactionType:
-  $ref: http://schema.cardwirth.org/utils#reactionType
+  !include partials/_utils.yml#reactionType
 
 successRate:
   type: integer
@@ -52,7 +52,7 @@ successRate:
   required: true
 
 animationType:
-  $ref: http://schema.cardwirth.org/utils#animationType
+  !include partials/_utils.yml#animationType
 
 evasionBonus:
   type: integer
@@ -110,11 +110,11 @@ reserved:
 effects:
   type: array
   required: true
-  items:
-    $ref: http://schema.cardwirth.org/effect#
+  additionalItems: false
+  items: !include partials/_effect.yml
 
 events:
   type: array
   required: true
-  items:
-    $ref: http://schema.cardwirth.org/simple_event
+  additionalItems: false
+  items: !include partials/_simple_event.yml

@@ -2,6 +2,14 @@ path = require 'path'
 fs = require 'fs'
 _ = require 'underscore'
 
+readPartialYAML = (partialpath, yaml) ->
+  [filename, propName] = partialpath.split('#')
+  filepath = path.join 'src', filename
+  data = fs.readFileSync filepath, 'utf-8'
+  result = yaml.load data
+  result = result[propName] if propName and result[propName]
+  result
+
 module.exports = (grunt) ->
   grunt.initConfig
     clean:
@@ -18,14 +26,10 @@ module.exports = (grunt) ->
           space: 0
           constructors:
             '!include': (node, yaml) ->
-              filepath = path.join 'src', node.value
-              data = fs.readFileSync filepath, 'utf-8'
-              yaml.load data
+              readPartialYAML node.value, yaml
             '!extend': (node, yaml) ->
-              [filename, srcObject] = yaml.load node.value
-              filepath = path.join 'src', filename
-              destData = fs.readFileSync filepath, 'utf-8'
-              destObject = yaml.load destData
+              [partialpath, srcObject] = yaml.load node.value
+              destObject = readPartialYAML partialpath, yaml
               _.extend destObject, srcObject
         src: 'src/**/*.yml'
         dest: 'lib'

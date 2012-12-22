@@ -1,8 +1,8 @@
 type: object
-$schema: http://json-schema.org/draft-03/schema#
-id: http://schema.cardwirth.org/background_image#
+id: '#background_image'
 required: true
 additionalProperties: false
+
 properties:
   top:
     type: integer

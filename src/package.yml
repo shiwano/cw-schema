@@ -20,5 +20,4 @@ properties:
   events:
     type: array
     required: true
-    items:
-      $ref: http://schema.cardwirth.org/simple_event
+    items: !include partials/_simple_event.yml

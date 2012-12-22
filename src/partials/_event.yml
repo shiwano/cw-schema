@@ -1,11 +1,14 @@
 type: object
-$schema: http://json-schema.org/draft-03/schema#
-id: http://schema.cardwirth.org/event#
+id: '#event'
 required: true
 additionalProperties: false
+
 properties:
   children:
-    $ref: http://schema.cardwirth.org/event_element#eventElements
+    type: array
+    required: true
+    additionalItems: false
+    items: !include partials/_event_element.yml
 
   triggers:
     type: object

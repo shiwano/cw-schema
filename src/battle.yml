@@ -18,8 +18,7 @@ properties:
     required: true
 
   cardArrangement:
-    $ref: http://schema.cardwirth.org/utils#cardArrangement
-    required: true
+    !include partials/_utils.yml#menuCardArrangementType
 
   music:
     type: string
@@ -28,8 +27,7 @@ properties:
   events:
     type: array
     required: true
-    items:
-      $ref: http://schema.cardwirth.org/event
+    items: !include partials/_event.yml
 
   enemyCards:
     type: array
@@ -67,5 +65,4 @@ properties:
         events:
           type: array
           required: true
-          items:
-            $ref: http://schema.cardwirth.org/event
+          items: !include partials/_event.yml
