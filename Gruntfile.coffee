@@ -1,5 +1,6 @@
 path = require 'path'
 fs = require 'fs'
+_ = require 'underscore'
 
 module.exports = (grunt) ->
   grunt.initConfig
@@ -20,6 +21,12 @@ module.exports = (grunt) ->
               filepath = path.join 'src', node.value
               data = fs.readFileSync filepath, 'utf-8'
               yaml.load data
+            '!extend': (node, yaml) ->
+              [filename, srcObject] = yaml.load node.value
+              filepath = path.join 'src', filename
+              destData = fs.readFileSync filepath, 'utf-8'
+              destObject = yaml.load destData
+              _.extend destObject, srcObject
         src: 'src/**/*.yml'
         dest: 'lib'
 
