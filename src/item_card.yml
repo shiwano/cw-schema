@@ -7,8 +7,7 @@ additionalProperties: false
 properties:
   !extend |
     - partials/_card_properties.yml
-    -
-      type:
+    - type:
         enum: [itemCard]
         required: true
 

@@ -13,11 +13,11 @@ readPartialYAML = (partialpath, yaml) ->
 module.exports = (grunt) ->
   grunt.initConfig
     clean:
-      tests: ['lib']
+      yaml: ['lib']
 
     watch:
       files: ['src/**/*.yml']
-      tasks: ['clean', 'yaml']
+      tasks: 'default'
 
     yaml:
       schemas:
@@ -35,7 +35,6 @@ module.exports = (grunt) ->
         dest: 'lib'
 
   # Default task.
-  grunt.loadTasks 'tasks'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-yaml'
