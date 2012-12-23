@@ -17,7 +17,7 @@ properties:
     type: string
     required: true
 
-  cardArrangement:
+  menuCardArrangementType:
     !include partials/_utils.yml#menuCardArrangementType
 
   music:
