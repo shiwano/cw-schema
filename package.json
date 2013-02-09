@@ -29,12 +29,10 @@
   },
   "devDependencies": {
     "grunt": "~0.4.0a",
-    "grunt-contrib-watch": "latest",
+    "grunt-contrib-watch": "~0.2.0rc7",
+    "grunt-contrib-clean": "~0.4.0rc6",
     "grunt-yaml": "~0.1.0",
-    "grunt-contrib-clean": "~0.4.0a"
+    "lodash": "~1.0.0-rc.3"
   },
-  "keywords": [],
-  "dependencies": {
-    "underscore": "~1.4.3"
-  }
+  "keywords": []
 }

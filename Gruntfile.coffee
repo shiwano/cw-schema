@@ -1,6 +1,6 @@
 path = require 'path'
 fs = require 'fs'
-_ = require 'underscore'
+_ = require 'lodash'
 
 readPartialYAML = (partialpath, yaml) ->
   [filename, propName] = partialpath.split('#')
