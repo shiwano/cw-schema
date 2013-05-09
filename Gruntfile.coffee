@@ -31,8 +31,9 @@ module.exports = (grunt) ->
               [partialpath, srcObject] = yaml.load node.value
               destObject = readPartialYAML partialpath, yaml
               _.extend destObject, srcObject
-        src: 'src/**/*.yml'
-        dest: 'lib'
+        files: [
+          {expand: true, cwd: 'src/', src: ['**/*.yml'], dest: 'lib/'}
+        ]
 
   # Default task.
   grunt.loadNpmTasks 'grunt-contrib-watch'
