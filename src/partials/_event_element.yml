@@ -213,13 +213,17 @@ properties:
   value:
     type: integer
 
-  abilityAptitude: !extend |
-    - partials/_utils.yml#abilityAptitude
-    - required: false
+  abilityAptitude:
+    !extend
+      base: partials/_utils.yml#abilityAptitude
+      partial:
+        required: false
 
-  personalAptitude: !extend |
-    - partials/_utils.yml#personalAptitude
-    - required: false
+  personalAptitude:
+    !extend
+      base: partials/_utils.yml#personalAptitude
+      partial:
+        required: false
 
   level:
     type: integer
@@ -235,22 +239,28 @@ properties:
       - partyIgnoreSleep    # パーティ全員・睡眠有効
       - party               # パーティ全員（効果コンテント用）
 
-  phenomenonType: !extend |
-    - partials/_utils.yml#phenomenonType
-    - required: false
+  phenomenonType:
+    !extend
+      base: partials/_utils.yml#phenomenonType
+      partial:
+        required: false
 
-  reactionType: !extend |
-    - partials/_utils.yml#reactionType
-    - required: false
+  reactionType:
+    !extend
+      base: partials/_utils.yml#reactionType
+      partial:
+        required: false
 
   successRate:
     type: integer
     maximum: 5
     minimum: -5
 
-  animationType: !extend |
-    - partials/_utils.yml#animationType
-    - required: false
+  animationType:
+    !extend
+      base: partials/_utils.yml#animationType
+      partial:
+        required: false
 
   effects:
     type: array

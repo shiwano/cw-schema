@@ -5,9 +5,10 @@ required: true
 additionalProperties: false
 
 properties:
-  !extend |
-    - partials/_card_properties.yml
-    - type:
+  !extend
+    base: partials/_card_properties.yml
+    partial:
+      type:
         enum: [itemCard]
         required: true
 
